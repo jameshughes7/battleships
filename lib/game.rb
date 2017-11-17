@@ -26,28 +26,21 @@ class Game
   def space_taken?(row, column)
     board.board_space_taken?(row, column)
   end
+
+  def place_ship_horizontally(row,column,value)
+    board.grid[row][column] = value
+    board.grid[row + 1][column] = value
+    board.grid[row + 2][column] = value
+    board.grid
+    board.display_board
+  end
+
+  def place_ship_vertically(row,column,value)
+    board.grid[row][column] = value
+    board.grid[row][column + 1] = value
+    board.grid[row][column + 2] = value
+    board.grid
+    board.display_board
+  end
+
 end
-
-
-
-
-
-
-
-#   def print_results
-#    board_layout = Array.new(10, ".").map{|row| Array.new(10, ".")}
-#    row_label = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-#    column_label = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-#
-#     print "\t"
-#     print row_label.join("\t")
-#     puts
-#     board_layout.each_with_index do |row, i|
-#       print column_label[i]
-#       print "\t"
-#       print row.join("\t")
-#       puts
-#      end
-#     end
-#
-# print_results
